@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        section{
+            padding: 0 !important;
+            margin:0 !important;
+            min-height: 0 !important;
+        }
+
+        .mySlides {
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 25%;
+            box-sizing: border-box;
+        }
+
+        .boxs {
+            width: 16.6%;
+            box-sizing: border-box;
+        }
+
+        .box img, .boxs img {
+            max-width: 100%;
+            padding: 20px 10px 10px;
+            height: auto;
+            width: 100%; /* Set width for large image */
+        }
+
+        .mobile {
+            display: none;
+        }
+
+
+        .flyer {
+            position: relative;
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0 20px;
+            font-weight: bold;
+        }
+
+        .flyer::before,
+        .flyer::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 2px;
+            background-color: #a1a1a1;
+            transform: translateY(-50%);
+        }
+
+        .flyer::before {
+            left: 0;
+        }
+
+        .flyer::after {
+            right: 0;
+        }
+
+        .derma-header {
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0 20px;
+            font-weight: bold;
+        }
+
+        .derma-text {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 50px;
+            padding-inline: 40px;
+            font-weight: normal;
+        }
+
+        @media (max-width: 1024px) {
+            .flyer {
+                position: relative;
+                text-align: center;
+                font-size: 22px;
+                margin: 40px 0 20px;
+                font-weight: bold;
+            }
+
+            .flyer::before,
+            .flyer::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 36%;
+                height: 2px;
+                background-color: #a1a1a1;
+                transform: translateY(-50%);
+            }
+
+            .derma-header {
+                text-align: center;
+                font-size: 22px;
+                margin: 40px 0 20px;
+                font-weight: bold;
+            }
+
+            .derma-text {
+                text-align: center;
+                font-size: 18px;
+                margin-bottom: 50px;
+                padding-inline: 40px;
+                font-weight: normal;
+            }
+        }
+
+        /* Media query for mobile screens */
+        @media (max-width: 768px) {
+            .box {
+                width: 50%;
+            }
+
+            .boxs {
+                width: 33.3%;
+            }
+            
+            .box img, .boxs img {
+                align-items: center;
+                width: 400px; /* Full width for mobile */
+                height: auto;
+                max-height: 400px; /* Adjust height for mobile */
+                margin-inline: auto;
+            }
+
+            .laptop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+
+            .flyer {
+                position: relative;
+                text-align: center;
+                font-size: 20px;
+                margin: 25px 0 10px;
+                font-weight: bold;
+            }
+
+            .flyer::before,
+            .flyer::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 35%;
+                height: 2px;
+                background-color: #a1a1a1;
+                transform: translateY(-50%);
+            }
+
+            .derma-header {
+                text-align: center;
+                font-size: 22px;
+                margin: 40px 0 20px;
+                font-weight: bold;
+            }
+
+            .derma-text {
+                text-align: center;
+                font-size: 18px;
+                margin-bottom: 50px;
+                padding-inline: 40px;
+                font-weight: normal;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+            .boxs {
+                width: 50%;
+            }
+
+            .flyer {
+                position: relative;
+                text-align: center;
+                font-size: 16px;
+                margin: 10px 0 5px;
+                font-weight: bold;
+            }
+
+            .flyer::before,
+            .flyer::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 30%;
+                height: 2px;
+                background-color: #a1a1a1;
+                transform: translateY(-50%);
+            }
+        }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="mySlides laptop">
+      <img
+        src="https://www-konga-com-res.cloudinary.com/image/upload/f_auto,q_auto/v1707911511/landingPages/CeraVe/CeraVaBanner.png"
+        style="width: 100%"
+        alt="Dermatological Skincare Banner"
+      />
+    </div>
+
+    <div class="mySlides mobile">
+      <img
+        src="https://www-konga-com-res.cloudinary.com/image/upload/f_auto,q_auto/v1711716652/landingPages/CeraVe/Main_Banner_Mobile.jpg"
+        style="width: 100%"
+        alt="Dermatological Skincare Banner"
+      />
+    </div>
+
+    <!--
+
+        <div class="video-container" onclick="playVideo()">
+        <video width="100%" controls loop autoplay muted>
+            <source src="cerave-vid.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+      </div>
+
+    -->
+
+    <!--  Search By Category Section  -->
+    <div class="">
+        <div class="flyer">Search by Category</div>
+
+        <div class="container">
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveBodyMoisturizers">
+                    <img src="cat-1.png" alt="Cleansing">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveFaceCleansers">
+                    <img src="cat-2.png" alt="Face Care">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveFaceMoisturizers">
+                    <img src="cat-3.png" alt="Body Care">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveSkinRenew">
+                    <img src="cat-4.png" alt="Sun Care">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  Search by Skin Type  -->
+    <div class="">
+        <div class="flyer">Search by Skin Type</div>
+
+        <div class="container">
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveBodyMoisturizers">
+                    <img src="skin-1.png" alt="Aging Skin">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveFaceCleansers">
+                    <img src="skin-2.png" alt="Acne Skin">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveFaceMoisturizers">
+                    <img src="skin-3.png" alt="Dry Skin">
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.konga.com/search?search=CeraveSkinRenew">
+                    <img src="skin-4.png" alt="Hair Concerns">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  Build A Routine  -->
+    <div class="">
+        <div class="flyer">Build A Routine</div>
+
+        <div class="container">
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveBodyMoisturizers">
+                    <img src="cleanse.png" alt="Cleanse Routine">
+                </a>
+            </div>
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveFaceCleansers">
+                    <img src="exfoliate.png" alt="Exfoliate Routine">
+                </a>
+            </div>
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveFaceMoisturizers">
+                    <img src="treat.png" alt="Treat Routine">
+                </a>
+            </div>
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveSkinRenew">
+                    <img src="eye.png" alt="Eyes Routine">
+                </a>
+            </div>
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveSkinRenew">
+                    <img src="moisturise.png" alt="Moisturize Routine">
+                </a>
+            </div>
+            <div class="boxs">
+                <a href="https://www.konga.com/search?search=CeraveSkinRenew">
+                    <img src="protect5.png" alt="Protect Routine">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="">
+        <h5 class="derma-header">About Konga's Dermatological Skincare</h5>
+        <p class="derma-text">
+            Welcome to Konga's Dermatological Skincare, your comprehensive hub for unlocking the secrets to healthy, radiant skin. Here, we offer a diverse array of products meticulously curated to address a spectrum of skin concerns, from acne to aging and beyond. Our innovative browsing options allow you to explore by skin concerns, ingredients, and even build personalized routines tailored to your unique needs.
+        </p>
+    </div>
+    
+  </body>
+</html>
+
+
